@@ -3,11 +3,93 @@ About pypdf-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pypdf-feedstock/blob/main/LICENSE.txt)
 
+
+About pypdf
+-----------
+
+Home: https://pypi.org/project/pypdf
+
+Package license: BSD-3-Clause
+
+Summary: A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files (with [full] and all tests)
+
+Development: https://github.com/py-pdf/pypdf
+
+Documentation: https://pypdf.readthedocs.io/
+
+About pypdf
+-----------
+
 Home: https://pypi.org/project/pypdf
 
 Package license: BSD-3-Clause
 
 Summary: A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files
+
+Development: https://github.com/py-pdf/pypdf
+
+Documentation: https://pypdf.readthedocs.io/
+
+About pypdf-with-crypto
+-----------------------
+
+Home: https://pypi.org/project/pypdf
+
+Package license: BSD-3-Clause
+
+Summary: A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files (with [crypto])
+
+Development: https://github.com/py-pdf/pypdf
+
+Documentation: https://pypdf.readthedocs.io/
+
+About pypdf-with-fonts
+----------------------
+
+Home: https://pypi.org/project/pypdf
+
+Package license: BSD-3-Clause
+
+Summary: A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files (with [fonts])
+
+Development: https://github.com/py-pdf/pypdf
+
+Documentation: https://pypdf.readthedocs.io/
+
+About pypdf-with-full
+---------------------
+
+Home: https://pypi.org/project/pypdf
+
+Package license: BSD-3-Clause
+
+Summary: A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files (with [full])
+
+Development: https://github.com/py-pdf/pypdf
+
+Documentation: https://pypdf.readthedocs.io/
+
+About pypdf-with-image
+----------------------
+
+Home: https://pypi.org/project/pypdf
+
+Package license: BSD-3-Clause
+
+Summary: A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files (with [image])
+
+Development: https://github.com/py-pdf/pypdf
+
+Documentation: https://pypdf.readthedocs.io/
+
+About pypdf-with-rtl-text
+-------------------------
+
+Home: https://pypi.org/project/pypdf
+
+Package license: BSD-3-Clause
+
+Summary: A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files (with [rtl_text])
 
 Development: https://github.com/py-pdf/pypdf
 
@@ -38,6 +120,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pypdf--with--fonts-green.svg)](https://anaconda.org/conda-forge/pypdf-with-fonts) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pypdf-with-fonts.svg)](https://anaconda.org/conda-forge/pypdf-with-fonts) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pypdf-with-fonts.svg)](https://anaconda.org/conda-forge/pypdf-with-fonts) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pypdf-with-fonts.svg)](https://anaconda.org/conda-forge/pypdf-with-fonts) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pypdf--with--full-green.svg)](https://anaconda.org/conda-forge/pypdf-with-full) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pypdf-with-full.svg)](https://anaconda.org/conda-forge/pypdf-with-full) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pypdf-with-full.svg)](https://anaconda.org/conda-forge/pypdf-with-full) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pypdf-with-full.svg)](https://anaconda.org/conda-forge/pypdf-with-full) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pypdf--with--image-green.svg)](https://anaconda.org/conda-forge/pypdf-with-image) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pypdf-with-image.svg)](https://anaconda.org/conda-forge/pypdf-with-image) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pypdf-with-image.svg)](https://anaconda.org/conda-forge/pypdf-with-image) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pypdf-with-image.svg)](https://anaconda.org/conda-forge/pypdf-with-image) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pypdf--with--rtl--text-green.svg)](https://anaconda.org/conda-forge/pypdf-with-rtl-text) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pypdf-with-rtl-text.svg)](https://anaconda.org/conda-forge/pypdf-with-rtl-text) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pypdf-with-rtl-text.svg)](https://anaconda.org/conda-forge/pypdf-with-rtl-text) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pypdf-with-rtl-text.svg)](https://anaconda.org/conda-forge/pypdf-with-rtl-text) |
 
 Installing pypdf
 ================
@@ -49,31 +132,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `_pypdf-with-full-tests, pypdf, pypdf-with-crypto, pypdf-with-fonts, pypdf-with-full, pypdf-with-image` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
-conda install _pypdf-with-full-tests pypdf pypdf-with-crypto pypdf-with-fonts pypdf-with-full pypdf-with-image
+conda install _pypdf-with-full-tests pypdf pypdf-with-crypto pypdf-with-fonts pypdf-with-full pypdf-with-image pypdf-with-rtl-text
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
-mamba install _pypdf-with-full-tests pypdf pypdf-with-crypto pypdf-with-fonts pypdf-with-full pypdf-with-image
+mamba install _pypdf-with-full-tests pypdf pypdf-with-crypto pypdf-with-fonts pypdf-with-full pypdf-with-image pypdf-with-rtl-text
 ```
 
-It is possible to list all of the versions of `_pypdf-with-full-tests` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add _pypdf-with-full-tests pypdf pypdf-with-crypto pypdf-with-fonts pypdf-with-full pypdf-with-image pypdf-with-rtl-text
+# for installing globally
+pixi global install _pypdf-with-full-tests pypdf pypdf-with-crypto pypdf-with-fonts pypdf-with-full pypdf-with-image pypdf-with-rtl-text
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `_pypdf-with-full-tests` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search _pypdf-with-full-tests --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search _pypdf-with-full-tests --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search _pypdf-with-full-tests --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -85,6 +210,8 @@ mamba repoquery whoneeds _pypdf-with-full-tests --channel conda-forge
 # List dependencies of `_pypdf-with-full-tests`:
 mamba repoquery depends _pypdf-with-full-tests --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge

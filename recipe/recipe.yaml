@@ -2,8 +2,10 @@
 schema_version: 1
 
 context:
-  version: "6.14.2"
+  version: "6.15.0"
   python_check_max: "3.14"
+  summary: |-
+    A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files
 
 recipe:
   name: pypdf
@@ -11,10 +13,10 @@ recipe:
 
 source:
   - url: https://pypi.org/packages/source/p/pypdf/pypdf-${{ version }}.tar.gz
-    sha256: 7873f502fe4385e79539b21d872392dc0c4e3714327c15881cbc7fbfd1f95b25
+    sha256: d39c4d955a76409284a905e2d65b40076d77ab76129e0faaeeb6612403ecfc79
     target_directory: dist
   - url: https://github.com/py-pdf/pypdf/archive/refs/tags/${{ version }}.tar.gz
-    sha256: f760b260a9b05aae7a739d1c5d6c875819619c601f5f3997ce3f390f79b32d5d
+    sha256: cc5d45108e82e7210a9ae671641aca368024523d141021b398b6caf624368b08
     target_directory: src
 
 build:
@@ -60,6 +62,8 @@ outputs:
           python_version:
             - ${{ python_min }}.*
             - ${{ python_check_max }}.*
+    about:
+      summary: ${{ summary }} (with [crypto])
 
   - package:
       name: pypdf-with-fonts
@@ -76,6 +80,8 @@ outputs:
           python_version:
             - ${{ python_min }}.*
             - ${{ python_check_max }}.*
+    about:
+      summary: ${{ summary }} (with [fonts])
 
   - package:
       name: pypdf-with-image
@@ -92,6 +98,27 @@ outputs:
           python_version:
             - ${{ python_min }}.*
             - ${{ python_check_max }}.*
+    about:
+      summary: ${{ summary }} (with [image])
+
+  - package:
+      name: pypdf-with-rtl-text
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - ${{ pin_subpackage("pypdf", exact=True) }}
+        - arabic-reshaper
+        - python-bidi
+    tests:
+      - python:
+          imports: pypdf
+          pip_check: true
+          python_version:
+            - ${{ python_min }}.*
+            - ${{ python_check_max }}.*
+    about:
+      summary: ${{ summary }} (with [rtl_text])
 
   - package:
       name: pypdf-with-full
@@ -102,6 +129,7 @@ outputs:
         - ${{ pin_subpackage("pypdf-with-crypto", exact=True) }}
         - ${{ pin_subpackage("pypdf-with-image", exact=True) }}
         - ${{ pin_subpackage("pypdf-with-fonts", exact=True) }}
+        - ${{ pin_subpackage("pypdf-with-rtl-text", exact=True) }}
         - ${{ pin_subpackage("pypdf", exact=True) }}
     tests:
       - python:
@@ -110,6 +138,8 @@ outputs:
           python_version:
             - ${{ python_min }}.*
             - ${{ python_check_max }}.*
+    about:
+      summary: ${{ summary }} (with [full])
 
   - package:
       name: _pypdf-with-full-tests
@@ -143,9 +173,11 @@ outputs:
             - python ${{ python_min }}.*
         script:
           - python test_all.py
+    about:
+      summary: ${{ summary }} (with [full] and all tests)
 
 about:
-  summary: A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files
+  summary: ${{ summary }}
   license: BSD-3-Clause
   license_file: dist/LICENSE
   homepage: https://pypi.org/project/pypdf
